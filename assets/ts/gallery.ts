@@ -66,16 +66,17 @@ class StackGallery {
             /// Images are wrapped with figure tag if the paragraph has only images without texts
             /// This is done to allow inline images within paragraphs
             const paragraph = img.closest('p');
-            if (paragraph != null) {
-                if (paragraph.textContent.trim() == '') {
-                    /// Once we insert figcaption, this check no longer works
-                    /// So we add a class to paragraph to mark it
-                    paragraph.classList.add('no-text');
-                }
-                
-                let isNewLineImage = paragraph.classList.contains('no-text');
-                if (!isNewLineImage) continue;
+
+            if (!paragraph || !container.contains(paragraph)) continue;
+
+            if (paragraph.textContent.trim() == '') {
+                /// Once we insert figcaption, this check no longer works
+                /// So we add a class to paragraph to mark it
+                paragraph.classList.add('no-text');
             }
+
+            let isNewLineImage = paragraph.classList.contains('no-text');
+            if (!isNewLineImage) continue;
 
             const hasLink = img.parentElement.tagName == 'A';
 

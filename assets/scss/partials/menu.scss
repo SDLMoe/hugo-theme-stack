@@ -125,7 +125,6 @@
 .menu {
     padding-left: 0;
     list-style: none;
-    display: flex;
     flex-direction: column;
     overflow-y: auto;
     flex-grow: 1;
@@ -199,6 +198,13 @@
                 font-weight: bold;
             }
         }
+    }
+
+    .menu-bottom-section {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 }
 
