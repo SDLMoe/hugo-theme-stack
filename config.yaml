@@ -108,6 +108,8 @@ params:
             id:
 
     widgets:
+        homepage: []
+        page: []
         enabled:
             - search
             - archives
